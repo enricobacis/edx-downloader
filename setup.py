@@ -1,8 +1,11 @@
 from distutils.core import setup
 import shutil
+import os
 
 # rename script
-shutil.copyfile('edx-dl.py', 'build/edx-downloader')
+if not os.path.exists('build/scripts'):
+    os.makedirs('build/scripts')
+shutil.copyfile('edx-dl.py', 'build/scripts/edx-downloader')
 
 setup(
     name='edx-downloader',
@@ -15,5 +18,5 @@ setup(
     maintainer='enricobacis',
     maintainer_email='enrico.bacis@gmail.com',
     requires=['youtube_dl', 'beautifulsoup4'],
-    scripts=['build/edx-downloader'],
+    scripts=['build/scripts/edx-downloader'],
 )
