@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup
 import shutil
 import os
 
@@ -17,6 +17,6 @@ setup(
     author_email='shk3@users.noreply.github.com',
     maintainer='enricobacis',
     maintainer_email='enrico.bacis@gmail.com',
-    requires=['youtube_dl', 'beautifulsoup4'],
+    install_requires=['youtube_dl', 'beautifulsoup4'],
     scripts=['build/scripts/edx-downloader'],
 )
